@@ -1,7 +1,7 @@
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
-import { FiShoppingCart } from "react-icons/fi";
+import CartWidget from './CartWidget'
 
 
 function NavBar(){
@@ -22,7 +22,7 @@ function NavBar(){
                     <Nav.Link href="#home">Productos</Nav.Link>
                     <Nav.Link href="#aboutus">Nosotros</Nav.Link>
                     <Nav.Link href="#contact">Contacto</Nav.Link>
-                    <Nav.Link href="#cart"><FiShoppingCart /></Nav.Link>
+                    <Nav.Link href="#cart"><CartWidget /></Nav.Link>
                 </Nav>
             </Container>
         </Navbar>

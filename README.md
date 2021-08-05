@@ -2,6 +2,10 @@
 
 Proyecto de E-Commerce usando React-app para Coderhouse
 
+## Versión 0.3
+- Se añade componente `ItemCount.jsx`
+    - Genera un boton susceptible de tener llamada con stock y valor inicial, devuelve el valor elegido en consola.
+
 ## Versión 0.2
 
 - Se añade componentes `CartWidget`, `ItemListContainer`

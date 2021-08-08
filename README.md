@@ -2,7 +2,11 @@
 
 Proyecto de E-Commerce usando React-app para Coderhouse
 
-## Versión 0.3
+# Versión 0.4
+- Se añade componentes `Items.jsx` y `ItemList.jsx`
+    - Genera una card de Boostrap-React con cada propiedad del mapeo del mock, utilizando Promises de forma asincronica.
+
+### Versión 0.3
 - Se añade componente `ItemCount.jsx`
     - Genera un boton susceptible de tener llamada con stock y valor inicial, devuelve el valor elegido en consola.
 

@@ -41,3 +41,13 @@
   background: #212529;
   color: #FFF;
 }
+
+.groupOfCards{
+  padding: 20px 0px;
+  background: #212529;
+}
+
+.card-link{
+  text-decoration: none;
+  color: orange;
+}

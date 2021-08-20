@@ -2,13 +2,14 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import CartWidget from './CartWidget'
+import { Link } from "react-router-dom"
 
 
 function NavBar(){
     return (
         <Navbar bg="dark" variant="dark" sticky="top">
             <Container fluid>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand as={Link} to="/">
                     <img
                     alt="Logo de Infinity-Box"
                     src="iboxlogo.png"
@@ -19,9 +20,9 @@ function NavBar(){
                 Infinity-Box
                 </Navbar.Brand>
                 <Nav className="justify-content-end">
-                    <Nav.Link href="#home">Productos</Nav.Link>
+                    <Nav.Link as={Link} to="/products">Productos</Nav.Link>
                     <Nav.Link href="#aboutus">Nosotros</Nav.Link>
-                    <Nav.Link href="#contact">Contacto</Nav.Link>
+                    <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
                     <Nav.Link href="#cart"><CartWidget /></Nav.Link>
                 </Nav>
             </Container>

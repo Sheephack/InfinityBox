@@ -1,8 +1,13 @@
 # Infinit-Box
 
 Proyecto de E-Commerce usando React-app para Coderhouse
+# Versión 0.5
+- Se añaden componentes `ItemDetail.jsx` , `ItemDetailContainer.jsx`
+- Se añaden paginas `contact.jsx` y `products.jsx`
+- Se reestrctura la funcion de ItemListContainer, Item y App.
+- Se añade routing.
 
-# Versión 0.4
+## Versión 0.4
 - Se añade componentes `Items.jsx` y `ItemList.jsx`
     - Genera una card de Boostrap-React con cada propiedad del mapeo del mock, utilizando Promises de forma asincronica.
 

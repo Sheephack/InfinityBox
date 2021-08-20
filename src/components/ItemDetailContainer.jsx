@@ -1,26 +1,29 @@
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { productsJson } from './productsJson'
-import ItemList from './ItemList'
+import ItemDetail from './ItemDetail'
 
-function ItemListContainer(){
+function ItemDetailContainer(){
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(false);
+    const { id } = useParams();
     
     useEffect(() =>{
         new Promise((resolve, reject) =>{
             setLoading(true)
-            setTimeout(() => resolve(productsJson), 3000);
-        }).then((data) => setProducts(data))
+            setTimeout(() => resolve(productsJson.filter((item) => item.id === id)), 3000);
+        }).then((data) => setProducts(data[0]))
         .finally(() =>{
-            setLoading(false)
-        })
-        
+            setLoading(false)})
     }, [])
-    
     if(loading){
         return <div className="centerScreen"><div className="lds-ring"><div></div><div></div><div></div><div></div></div></div>
     }
-    return loading ? <h2>Cargando...</h2> : <ItemList products={products} />
+
+    return (
+        <ItemDetail {...products} />
+    )
 
 }
-export default ItemListContainer
+
+export default ItemDetailContainer

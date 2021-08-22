@@ -2,7 +2,9 @@ import ItemListContainer from '../components/ItemListContainer'
 
 function Products(){
     return(
-        <ItemListContainer />
+        <div className="homeContainer">
+            <ItemListContainer />
+        </div>
     )
 }
 

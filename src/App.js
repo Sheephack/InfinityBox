@@ -4,7 +4,8 @@ import Products from './pages/products'
 import Contact from './pages/contact'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer'
-
+import Index from './pages/index'
+import AboutUs from './pages/about'
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/">
-
+          <Index />
         </Route>
         <Route exact path="/products">
           <Products />
@@ -23,6 +24,9 @@ function App() {
         </Route>
         <Route exact path="/contact">
           <Contact />
+        </Route>
+        <Route exact path="/about">
+          <AboutUs />
         </Route>
       </Switch>
     </BrowserRouter>

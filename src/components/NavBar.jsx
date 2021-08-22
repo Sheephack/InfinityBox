@@ -21,7 +21,7 @@ function NavBar(){
                 </Navbar.Brand>
                 <Nav className="justify-content-end">
                     <Nav.Link as={Link} to="/products">Productos</Nav.Link>
-                    <Nav.Link href="#aboutus">Nosotros</Nav.Link>
+                    <Nav.Link as={Link} to="/about">Nosotros</Nav.Link>
                     <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
                     <Nav.Link href="#cart"><CartWidget /></Nav.Link>
                 </Nav>

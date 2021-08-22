@@ -56,6 +56,7 @@
   display: flex;
   justify-content: center;
   margin: 3rem;
+  height: 700px;
 }
 
 /* loader */
@@ -101,4 +102,23 @@
   left: 50%;
     top: 35%;
     z-index: 1000;
+}
+
+.homeContainer{
+  background-image: url(./img/background-boxes.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 91vh;
+  display: flex;
+  justify-content: center;
+}
+
+.homeContainer .homeTittleContainer{
+  display: flex;
+  height: 300px;
+  align-items: center;
+}
+.homeContainer .homeTittleContainer .homeTittle{
+  color: #fff;
 }

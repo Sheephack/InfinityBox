@@ -1,7 +1,21 @@
 # Infinit-Box
+Proyecto de E-Commerce usando React-app para Coderhouse, su finalidad es la de poder ser un sitio de venta de Lootboxes, de diferentes categorias y tematicas.
 
-Proyecto de E-Commerce usando React-app para Coderhouse
-# Versión 0.5
+Actualmente se encuentran instaladas las siguientes dependencias por fuera de las recomendadas:
+- React-Bootstrap
+- Bootstrap
+- Bootstrap-icons
+- React-icons
+- Node-sass
+- Nodemon
+
+![alt text](https://media.giphy.com/media/HtXAfIeJBFSiZ5zXOZ/giphy.gif?cid=790b761100663205c06b2fdd17e21e63c4c2682ed7fae873&rid=giphy.gif&ct=g)
+
+# Versión 0.6 (Primer entrega del proyecto final)
+- Se añaden páginas `about.jsx` e `index.jsx` para dar función al navbar.
+- Se mejora el routing
+
+## Versión 0.5
 - Se añaden componentes `ItemDetail.jsx` , `ItemDetailContainer.jsx`
 - Se añaden paginas `contact.jsx` y `products.jsx`
 - Se reestrctura la funcion de ItemListContainer, Item y App.

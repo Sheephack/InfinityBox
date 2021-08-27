@@ -6,7 +6,8 @@ export const productsJson = [
     stock: 4,
     pictureUrl: "../img/box-mistery.png",
     price: 1500,
-    rarity: "Legendaria"
+    rarity: "Legendaria",
+    initial: 1
 },
 {
     id: "2",
@@ -15,7 +16,8 @@ export const productsJson = [
     stock: 15,
     pictureUrl: "../img/box-candy.png",
     price: 200,
-    rarity: "Común"
+    rarity: "Común",
+    initial: 1
 },
 {
     id: "3",
@@ -24,7 +26,8 @@ export const productsJson = [
     stock: 4,
     pictureUrl: "../img/box-beer.png",
     price: 400,
-    rarity: "Rara"
+    rarity: "Rara",
+    initial: 1
 },
 {
     id: "4",
@@ -33,7 +36,8 @@ export const productsJson = [
     stock: 8,
     pictureUrl: "../img/box-discount.png",
     price: 300,
-    rarity: "Común"
+    rarity: "Común",
+    initial: 1
 },
 {
     id: "5",
@@ -42,6 +46,7 @@ export const productsJson = [
     stock: 3,
     pictureUrl: "../img/box-courses.png",
     price: 1000,
-    rarity: "Rara"
+    rarity: "Rara",
+    initial: 1
 }
 ]

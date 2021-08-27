@@ -1,11 +1,24 @@
 import React, {useState, useEffect} from 'react';
 import Button from "react-bootstrap/Button"
 
-function ItemCount(props){
-    const [count, setCount] = useState(props.initial);
+function ItemCount({onAdd, stock, items} , props){
+    const [count, setCount] = useState(items);
     const [disableUp, setDisableUp] = useState(false);
     const [disableDown, setDisableDown] = useState(true);
     const [disableStock, setDisableStock] =useState(false);
+    console.log(items)
+
+    const suma = () => {
+    console.log("suma", items, stock);
+        if (items < stock){
+            onAdd(items +1)
+        }
+    }
+    const resta = () =>{
+        if (items <= stock){
+            onAdd(items -1)
+        }
+    }
  
     useEffect(() => {
         if (props.stock === 0){
@@ -14,26 +27,26 @@ function ItemCount(props){
             setDisableStock(true);
             
         }
-        if (count === props.stock){
+        if (items === props.stock){
             setDisableUp(true)
         }
-        if (count < props.stock){
+        if (items < props.stock){
             setDisableUp(false)
         }
-        if (count === 1){
+        if (items === 0){
             setDisableDown(true)
         }
-        if (count > 1){
+        if (items >= 1){
             setDisableDown(false)
         }
-    },[count]);
+    },[items]);
     
     return(
         <>
-            <h1>Contador: {count}</h1>
-            <Button id="add" disabled={disableUp} variant="outline-light" onClick={() => setCount(count + 1)}>Sumar Item</Button>
-            <Button variant="outline-light" disabled={disableDown} onClick={() => setCount(count - 1)}>Restar Item</Button> <br />
-            <Button variant="outline-light" disabled={disableStock} onClick={() => console.log("Los objetos son:", count)}>Añadir al carrito</Button>
+            <h1>Contador: {items}</h1>
+            <Button id="add" disabled={disableUp} variant="outline-light" onClick={suma}>Sumar Item</Button>
+            <Button variant="outline-light" disabled={disableDown} onClick={resta}>Restar Item</Button> <br />
+            <Button variant="outline-light" disabled={disableStock} onClick={() => console.log("Los objetos son:", items)}>Añadir al carrito</Button>
             <div id="countDisplay"></div>
         </>
     )

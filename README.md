@@ -11,7 +11,12 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 
 ![alt text](https://media.giphy.com/media/HtXAfIeJBFSiZ5zXOZ/giphy.gif?cid=790b761100663205c06b2fdd17e21e63c4c2682ed7fae873&rid=giphy.gif&ct=g)
 
-# Versión 0.6 (Primer entrega del proyecto final)
+# Versión 0.7 
+- Se añade cartContext.js
+- Se añade Cart.jsx (vacio por el momento)
+- Se incluye el ItemCount dentro del ItemDetail con requerimiento por desafio.
+
+## Versión 0.6 (Primer entrega del proyecto final)
 - Se añaden páginas `about.jsx` e `index.jsx` para dar función al navbar.
 - Se mejora el routing
 

@@ -40,7 +40,7 @@ function ItemDetail(props){
                 </Card.Body>
                 <Card.Body>
                     <ItemCount stock={props.stock} initial={props.initial} onAdd={setItemsAdded} items={itemsAdded} />
-                    {itemsAdded > 0 && <Button variant="outline-light" onClick={() => addToCart(item)} >Añadir al carrito y terminar compra</Button>}
+                    {itemsAdded > 0 && <Button variant="outline-light" onClick={() => addToCart(item)*itemsAdded} >Añadir al carrito y terminar compra</Button>}
                     {items.length > 0 && <Button variant="outline-light" onClick={handleRemove}>Remover del carrito</Button>}
                 </Card.Body>
             </Card>

@@ -11,7 +11,7 @@ function ItemDetailContainer(){
     useEffect(() =>{
         new Promise((resolve, reject) =>{
             setLoading(true)
-            setTimeout(() => resolve(productsJson.filter((item) => item.id === id)), 3000);
+            setTimeout(() => resolve(productsJson.filter((item) => item.id === id)), 2000);
         }).then((data) => setProducts(data[0]))
         .finally(() =>{
             setLoading(false)})

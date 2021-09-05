@@ -6,14 +6,28 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer'
 import Index from './pages/index'
 import AboutUs from './pages/about'
-import { CartContext } from './context/cartContext'
-import { useState } from 'react'
+import { CartProvider } from './context/cartContext'
+import { useEffect, useState } from 'react'
 import Cart from './components/Cart'
+import { getData } from './firebase'
+import { collection, getDocs } from 'firebase/firestore';
+
 
 function App() {
-  const [defecto, setDefecto] = useState([])
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    const getProductos = async () => {
+      const productosCollection = collection(getData(), 'productos')
+      const productosSnapshot = await getDocs(productosCollection);
+      const productosList = productosSnapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
+      console.log(productosList);
+      setProductos(productosList);
+    };
+    getProductos();
+  }, [])
   return (
-    <CartContext.Provider value={defecto}>
+    <CartProvider >
       <BrowserRouter>
         <NavBar />
         <Switch>
@@ -37,7 +51,7 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter>
-    </CartContext.Provider>
+    </CartProvider>
   );
 }
 

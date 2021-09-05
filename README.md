@@ -1,4 +1,4 @@
-# Infinit-Box
+# Infinity-Box
 Proyecto de E-Commerce usando React-app para Coderhouse, su finalidad es la de poder ser un sitio de venta de Lootboxes, de diferentes categorias y tematicas.
 
 Actualmente se encuentran instaladas las siguientes dependencias por fuera de las recomendadas:
@@ -11,7 +11,11 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 
 ![alt text](https://media.giphy.com/media/HtXAfIeJBFSiZ5zXOZ/giphy.gif?cid=790b761100663205c06b2fdd17e21e63c4c2682ed7fae873&rid=giphy.gif&ct=g)
 
-# Versión 0.7 
+# Versión 0.8
+- Se trabaja en CartContext con integracion de Cart, aun no completamente disponible.
+- Se permite añadir items de compra al Context y eliminarlos. (falta la logica de no repetición)
+
+## Versión 0.7 
 - Se añade cartContext.js
 - Se añade Cart.jsx (vacio por el momento)
 - Se incluye el ItemCount dentro del ItemDetail con requerimiento por desafio.

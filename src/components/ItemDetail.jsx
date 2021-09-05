@@ -4,21 +4,21 @@ import ListGroupItem from 'react-bootstrap/ListGroupItem'
 import { Link } from 'react-router-dom'
 import ItemCount from './ItemCount'
 import Button from "react-bootstrap/Button"
-import { useState, useContext } from 'react'
-import { CartContext, RemoveFromCart } from '../context/cartContext'
+import { useState } from 'react'
+import { useCart, useDispatchCart } from '../context/cartContext'
 
 function ItemDetail(props){
-    const [items, setItems] = useState(0)
-    const [cart, setCart] = useContext(CartContext);
-    const addToCart = () =>{
-        const addedItem = {name: props.title, price: (props.price * items), qty: items};
-        setCart(current => [...current, addedItem]);
+    const item = {...props}
+    const items = useCart();
+    const dispatch = useDispatchCart();
+    const addToCart = (item) =>{
+        dispatch({ type: "ADD", item})
+        console.log(items)
     }
-    const RemoveFromCart = () =>{
-        const remove = cart.filter((item) => item.name !== props.title)
-        setCart(remove)
+    const handleRemove = index =>{
+        dispatch({type: "REMOVE", index})
     }
-    
+    const [itemsAdded, setItemsAdded] = useState(0)
 
     return(
         <div style={{display: "flex", justifyContent:"center"}}>
@@ -39,9 +39,9 @@ function ItemDetail(props){
                     <Card.Link as={Link} to={`/products`}>Volver a todos los productos</Card.Link>
                 </Card.Body>
                 <Card.Body>
-                    <ItemCount stock={props.stock} initial={props.initial} onAdd={setItems} items={items} />
-                    {items > 0 && <Button variant="outline-light" onClick={addToCart} >Añadir al carrito y terminar compra</Button>}
-                    {cart.length > 0 && <Button variant="outline-light" onClick={RemoveFromCart}>Remover del carrito</Button>}
+                    <ItemCount stock={props.stock} initial={props.initial} onAdd={setItemsAdded} items={itemsAdded} />
+                    {itemsAdded > 0 && <Button variant="outline-light" onClick={() => addToCart(item)} >Añadir al carrito y terminar compra</Button>}
+                    {items.length > 0 && <Button variant="outline-light" onClick={handleRemove}>Remover del carrito</Button>}
                 </Card.Body>
             </Card>
         </div>

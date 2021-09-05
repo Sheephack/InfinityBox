@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { FiShoppingCart } from "react-icons/fi";
-import { CartContext } from '../context/cartContext'
+import { useCart } from '../context/cartContext'
 
 function CartWidget(){
-    const [cart, setCart] = useContext(CartContext)
+    const items = useCart();
     return (
     <>
-    <FiShoppingCart />{cart.length > 0 && <span>{cart.length}</span>}
+    <FiShoppingCart />{items.length > 0 && <span>({items.length})</span>}
     </>
 
     

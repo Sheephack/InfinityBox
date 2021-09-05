@@ -6,19 +6,25 @@ import ItemCount from './ItemCount'
 import Button from "react-bootstrap/Button"
 import { useState } from 'react'
 import { useCart, useDispatchCart } from '../context/cartContext'
+import {useRef} from 'react'
 
 function ItemDetail(props){
-    const item = {...props}
+    const [disableBtn, setDisableBtn] = useState(false);
+    let btnRef = useRef()
     const items = useCart();
     const dispatch = useDispatchCart();
     const addToCart = (item) =>{
-        dispatch({ type: "ADD", item})
+        dispatch({ type: "ADD", item })
         console.log(items)
+        setDisableBtn(true)
+          
     }
     const handleRemove = index =>{
         dispatch({type: "REMOVE", index})
+        setDisableBtn(false)
     }
     const [itemsAdded, setItemsAdded] = useState(0)
+    const item = {...props, quantity: itemsAdded}
 
     return(
         <div style={{display: "flex", justifyContent:"center"}}>
@@ -40,7 +46,7 @@ function ItemDetail(props){
                 </Card.Body>
                 <Card.Body>
                     <ItemCount stock={props.stock} initial={props.initial} onAdd={setItemsAdded} items={itemsAdded} />
-                    {itemsAdded > 0 && <Button variant="outline-light" onClick={() => addToCart(item)*itemsAdded} >Añadir al carrito y terminar compra</Button>}
+                    {itemsAdded > 0 && <Button ref={btnRef} disabled={disableBtn} variant="outline-light" onClick={() => addToCart(item)} >Añadir al carrito y terminar compra</Button>}
                     {items.length > 0 && <Button variant="outline-light" onClick={handleRemove}>Remover del carrito</Button>}
                 </Card.Body>
             </Card>

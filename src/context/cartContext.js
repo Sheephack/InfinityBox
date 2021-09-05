@@ -1,20 +1,20 @@
-import { useState, useReducer, createContext, useContext } from 'react'
+import { useState, useReducer, createContext, useContext } from 'react';
 
 
-export const CartContext = createContext()
-export const CartDispatchContext = createContext()
+export const CartContext = createContext();
+export const CartDispatchContext = createContext();
 
 const reducer = (state, action) => {
   switch (action.type){
     case "ADD":
-      return [...state, action.item]
+      return [...state, action.item];
     case "REMOVE":
       const newArr = [...state];
       newArr.splice(action.index, 1);
-      return newArr
+      return newArr;
     default:
-      throw new Error(`Acción desconocida ${action.type}`)
-  }
+      throw new Error(`Acción desconocida ${action.type}`);
+  };
 };
 
 export const CartProvider = ({ children }) => {
@@ -26,22 +26,12 @@ export const CartProvider = ({ children }) => {
         {children}
       </CartContext.Provider>
     </CartDispatchContext.Provider>
-  )
-}
+  );
+};
 
 export const useCart = () => useContext(CartContext);
 export const useDispatchCart = () => useContext(CartDispatchContext);
 
-// export const CartProvider = (props) =>{
-//   const [cart, setCart] = useState([])
-
-  
-//   return(
-//     <CartContext.Provider value={[cart, setCart]}>
-//       {props.children}
-//     </CartContext.Provider>
-//   )
-// }
 
 
   

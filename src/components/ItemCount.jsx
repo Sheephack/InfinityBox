@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button"
 import { CartContext } from '../context/cartContext'
 
 function ItemCount({onAdd, stock, items} , props){
-    const [count, setCount] = useState(items);
+    // const [count, setCount] = useState(items);
     const [disableUp, setDisableUp] = useState(false);
     const [disableDown, setDisableDown] = useState(true);
     const [disableStock, setDisableStock] = useState(false);

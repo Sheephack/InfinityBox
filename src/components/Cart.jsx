@@ -2,8 +2,10 @@ import React from "react";
 import { useCart, useDispatchCart } from "../context/cartContext";
 
 const CartItem = ({ product, index, handleRemove }) => {
+  const itemsFullPrice = product.price * product.quantity
+  console.log(itemsFullPrice)
   return (
-    <article>
+    <article style={{"color": "white"}}>
       <div>
         <div>
           <img src={product.pictureUrl} className="img-fluid" />
@@ -14,7 +16,7 @@ const CartItem = ({ product, index, handleRemove }) => {
           <p>
             <span>Precio</span>
             <span>
-              {product.price.toLocaleString("en", {
+              {itemsFullPrice.toLocaleString("en", {
                 style: "currency",
                 currency: "ARS"
               })}
@@ -30,7 +32,10 @@ const CartItem = ({ product, index, handleRemove }) => {
 export default function Store() {
   const items = useCart();
   const dispatch = useDispatchCart();
-  const totalPrice = items.reduce((total, b) => total + b.price, 0);
+  const subPrice = items.reduce((total, b) => total + b.price, 0);
+  const subAmount = items.reduce((total, b) => total + b.quantity, 0);
+  const totalPrice = subPrice * subAmount
+  console.log(items)
 
   const handleRemove = (index) => {
     dispatch({ type: "REMOVE", index });
@@ -38,13 +43,13 @@ export default function Store() {
 
   if (items.length === 0) {
     return (
-      <main>
+      <main style={{"color": "white"}}>
         <p>El carrito esta vacio</p>
       </main>
     );
   }
   return (
-    <main>
+    <main style={{"color": "white"}}>
       <p>
         Precio total:{" "}
         {totalPrice.toLocaleString("en", {

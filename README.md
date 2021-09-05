@@ -11,7 +11,11 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 
 ![alt text](https://media.giphy.com/media/HtXAfIeJBFSiZ5zXOZ/giphy.gif?cid=790b761100663205c06b2fdd17e21e63c4c2682ed7fae873&rid=giphy.gif&ct=g)
 
-# Versión 0.8
+# Versión 0.8.1
+- Se reformula uso de CartContext e integración con el Cart.
+- Lógica de prevención de repetición y agrupación de items del mismo tipo en un solo item.
+
+## Versión 0.8
 - Se trabaja en CartContext con integracion de Cart, aun no completamente disponible.
 - Se permite añadir items de compra al Context y eliminarlos. (falta la logica de no repetición)
 

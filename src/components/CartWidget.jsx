@@ -4,9 +4,10 @@ import { useCart } from '../context/cartContext'
 
 function CartWidget(){
     const items = useCart();
+    const reducedItems = items.reduce((acc, b) => acc + b.quantity, 0)
     return (
     <>
-    <FiShoppingCart />{items.length > 0 && <span>({items.length})</span>}
+    <><FiShoppingCart /><span>({reducedItems})</span></>
     </>
 
     

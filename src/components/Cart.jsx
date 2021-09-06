@@ -1,5 +1,7 @@
 import React from "react";
 import { useCart, useDispatchCart } from "../context/cartContext";
+import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom'
 
 const CartItem = ({ product, index, handleRemove }) => {
   const itemsFullPrice = product.price * product.quantity
@@ -32,9 +34,17 @@ const CartItem = ({ product, index, handleRemove }) => {
 export default function Store() {
   const items = useCart();
   const dispatch = useDispatchCart();
-  const subPrice = items.reduce((total, b) => total + b.price, 0);
-  const subAmount = items.reduce((total, b) => total + b.quantity, 0);
-  const totalPrice = subPrice * subAmount
+  const subPrice = []
+  let totalPrice
+
+  for (const prices of items){
+    const finalPrice = prices.price * prices.quantity
+    subPrice.push(finalPrice)
+    console.log("precio final", finalPrice)
+    console.log("array final", subPrice)
+    console.log(totalPrice)
+    totalPrice = subPrice.reduce((a, b) => a + b)
+  }
   console.log(items)
 
   const handleRemove = (index) => {
@@ -45,6 +55,7 @@ export default function Store() {
     return (
       <main style={{"color": "white"}}>
         <p>El carrito esta vacio</p>
+        <Button as={Link} variant="outline-light" to={`/products`}>Volver a todos los productos</Button>
       </main>
     );
   }

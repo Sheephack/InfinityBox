@@ -3,9 +3,11 @@ import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import CartWidget from './CartWidget'
 import { Link } from "react-router-dom"
-
+import { useCart } from '../context/cartContext'
 
 function NavBar(){
+    const items = useCart();
+    const reducedItems = items.reduce((acc, b) => acc + b.quantity, 0)
     return (
         <Navbar bg="dark" variant="dark" sticky="top">
             <Container fluid>
@@ -23,7 +25,7 @@ function NavBar(){
                     <Nav.Link as={Link} to="/products">Productos</Nav.Link>
                     <Nav.Link as={Link} to="/about">Nosotros</Nav.Link>
                     <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
-                    <Nav.Link as={Link} to="/cart"><CartWidget /></Nav.Link>
+                    {reducedItems > 0 && <Nav.Link as={Link} to="/cart"><CartWidget /></Nav.Link>}
                 </Nav>
             </Container>
         </Navbar>

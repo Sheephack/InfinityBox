@@ -8,14 +8,20 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 - React-icons
 - Node-sass
 - Nodemon
+- Firebase
 
 ![alt text](https://media.giphy.com/media/HtXAfIeJBFSiZ5zXOZ/giphy.gif?cid=790b761100663205c06b2fdd17e21e63c4c2682ed7fae873&rid=giphy.gif&ct=g)
 
-# Versión 0.8.2
+# Versión 0.9
+- Se elimina el uso de async mocks. Se elimina el archivo productsJson.js
+- Se implementa uso de Firebase, con reemplazo de los items del mock. Todas las llamadas son remotas.
+- Se hace uso de llamada simple en ItemDetailContainer.
+
+## Versión 0.8.2
 - Se finaliza el uso de Context para la correcta manipulacion del cart.
 - Se añade visualizacion al Cart (desafio Cart View)
 
-# Versión 0.8.1
+## Versión 0.8.1
 - Se reformula uso de CartContext e integración con el Cart.
 - Lógica de prevención de repetición y agrupación de items del mismo tipo en un solo item.
 

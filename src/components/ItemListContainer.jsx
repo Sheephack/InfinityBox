@@ -1,20 +1,25 @@
 import { useEffect, useState } from 'react'
-import { productsJson } from './productsJson'
 import ItemList from './ItemList'
+import { collection, getDocs } from 'firebase/firestore'
+import { getData } from '../firebase'
 
 function ItemListContainer(){
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(false);
     
-    useEffect(() =>{
-        new Promise((resolve, reject) =>{
-            setLoading(true)
-            setTimeout(() => resolve(productsJson), 3000);
-        }).then((data) => setProducts(data))
-        .finally(() =>{
+    useEffect(async () =>{
+        try {
+            setLoading(true);
+            const productsCollection = collection(getData(), 'productos')
+            const productsSnapshot = await getDocs(productsCollection);
+            const productsList = productsSnapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
+            setProducts(productsList);
+            setTimeout(() => {setLoading(false)},1000)
+            
+        } catch (error){
             setLoading(false)
-        })
-        
+            console.log("error")
+        }
     }, [])
     
     if(loading){

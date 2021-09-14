@@ -9,10 +9,17 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 - Node-sass
 - Nodemon
 - Firebase
+- SweetAlerts2
 
 ![alt text](https://media.giphy.com/media/HtXAfIeJBFSiZ5zXOZ/giphy.gif?cid=790b761100663205c06b2fdd17e21e63c4c2682ed7fae873&rid=giphy.gif&ct=g)
 
-# Versión 0.9
+# Versión 1.0 (Primera versión completamente funcional)
+- Se integra el uso de Firebase con recepción de ordenes de compra y devolución de numero de orden
+- El proceso de selección de productos, creación de carrito y finalización de compra esta completo.
+    - A partir de este commit, los cambios realizados en el proyecto a nivel funcional, solo seran en pos de incrementar la optimización, la estetica y la experiencia del usuario.
+    - Se programa incrementar la cantidad de productos y la categorización de los mismos.
+
+## Versión 0.9
 - Se elimina el uso de async mocks. Se elimina el archivo productsJson.js
 - Se implementa uso de Firebase, con reemplazo de los items del mock. Todas las llamadas son remotas.
 - Se hace uso de llamada simple en ItemDetailContainer.

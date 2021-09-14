@@ -2,6 +2,7 @@ import React from "react";
 import { useCart, useDispatchCart } from "../context/cartContext";
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
+import Checkout from "./Checkout";
 
 const CartItem = ({ product, index, handleRemove }) => {
   const itemsFullPrice = product.price * product.quantity
@@ -76,6 +77,7 @@ export default function Store() {
           index={index}
         />
       ))}
+      <Checkout placement='end'></Checkout>
     </main>
   );
 }

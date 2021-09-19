@@ -1,0 +1,122 @@
+@import "index";
+
+body{
+  background: #141414;
+}
+.App {
+  
+    text-align: center;
+
+    &-logo {
+      height: 40vmin;
+      pointer-events: none;
+    }
+
+    &-header {
+      background-color: #282c34;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: calc(10px + 2vmin);
+      color: white;
+    }
+    &-link {
+      color: #61dafb;
+    }
+  }
+  
+  
+  
+  
+  .saludo{
+    background: #212529;
+    color: #FFF;
+  }
+  
+  .groupOfCards{
+    padding: 20px 0px;
+    background: #212529;
+  }
+  
+  .card-link{
+    text-decoration: none;
+    color: orange;
+  }
+  
+  .itemList{
+    display: flex;
+    justify-content: center;
+    margin: 3rem;
+    height: 700px;
+  }
+  
+  /* loader */
+  
+  .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fed;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fed transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .centerScreen{
+    position: fixed;
+    left: 50%;
+      top: 35%;
+      z-index: 1000;
+  }
+  
+  .homeContainer{
+    background-image: url(../img/background-boxes.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 91vh;
+    display: flex;
+    justify-content: center;
+
+        .homeTittleContainer{
+            display: flex;
+            height: 300px;
+            align-items: center;
+
+            .homeTittle{
+              color: #fff;
+            }
+        }
+  }
+  
+  .spaceInWidget{
+      margin-left: 0.1rem;
+  }

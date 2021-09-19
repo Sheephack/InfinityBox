@@ -1,4 +1,5 @@
-import './App.css';
+import 'bootstrap/scss/bootstrap.scss'
+import './scss/styles.scss';
 import NavBar from './components/NavBar'
 import Products from './pages/products'
 import Contact from './pages/contact'
@@ -14,18 +15,18 @@ import { collection, getDocs } from 'firebase/firestore';
 
 
 function App() {
-  const [productos, setProductos] = useState([]);
+  // const [productos, setProductos] = useState([]);
 
-  useEffect(() => {
-    const getProductos = async () => {
-      const productosCollection = collection(getData(), 'productos')
-      const productosSnapshot = await getDocs(productosCollection);
-      const productosList = productosSnapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
-      console.log(productosList);
-      setProductos(productosList);
-    };
-    getProductos();
-  }, [])
+  // useEffect(() => {
+  //   const getProductos = async () => {
+  //     const productosCollection = collection(getData(), 'productos')
+  //     const productosSnapshot = await getDocs(productosCollection);
+  //     const productosList = productosSnapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
+  //     console.log(productosList);
+  //     setProductos(productosList);
+  //   };
+  //   getProductos();
+  // }, [])
   return (
       <CartProvider >
         <BrowserRouter>

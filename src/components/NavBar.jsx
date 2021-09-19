@@ -25,7 +25,7 @@ function NavBar(){
                     <Nav.Link as={Link} to="/products">Productos</Nav.Link>
                     <Nav.Link as={Link} to="/about">Nosotros</Nav.Link>
                     <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
-                    {reducedItems > 0 && <Nav.Link as={Link} to="/cart"><CartWidget /></Nav.Link>}
+                    <Nav.Link as={Link} to="/cart"><CartWidget /></Nav.Link>
                 </Nav>
             </Container>
         </Navbar>

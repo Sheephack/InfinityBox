@@ -13,7 +13,22 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 
 ![alt text](https://media.giphy.com/media/HtXAfIeJBFSiZ5zXOZ/giphy.gif?cid=790b761100663205c06b2fdd17e21e63c4c2682ed7fae873&rid=giphy.gif&ct=g)
 
-# Versión 1.0 (Primera versión completamente funcional)
+# Versión 1.1
+- Se hacen mejoras generales y reformas esteticas del `index.html`
+- Se comienza un cambio estetico del sitio y adaptabilidad para entrega final.
+- Se crean nuevos (3) productos en Firestore:
+    - Estos productos tienen como función principal ser los CTA del index.
+    - Se incorpora llamada asincronica a solo estos 3 elementos en el index.
+    - Se incorporan los CTA al carrusel del index.
+- Se implementa Spinner de React-Bootstrap para secciones de Loading en Cards de index.
+- Se deja como placeholder un Accordion de React-Bootstrap. (Sin modificar)
+- Se eliminan del repositorio archivos que no tienen relevancia con el proyecto, a saber:
+    - `App.css`
+    - `logo.svg`
+    - Directorio `img` dentro de public y todas sus imágenes (estan alojadas en Firestore)
+- Se comienza a implementar estilos via SASS 
+
+## Versión 1.0 (Primera versión completamente funcional)
 - Se integra el uso de Firebase con recepción de ordenes de compra y devolución de numero de orden
 - El proceso de selección de productos, creación de carrito y finalización de compra esta completo.
     - A partir de este commit, los cambios realizados en el proyecto a nivel funcional, solo seran en pos de incrementar la optimización, la estetica y la experiencia del usuario.

@@ -8,7 +8,11 @@ import Spinner from 'react-bootstrap/Spinner'
 export default function PortraitItem(props) {
 
     const [loading, setLoading] = useState(false)
-    useEffect(async () =>{
+    useEffect(() =>{
+
+        async function LoadingState(){
+
+        
         try {
             setLoading(true);
         } catch (error){
@@ -17,6 +21,8 @@ export default function PortraitItem(props) {
         }finally{
             setTimeout(() => {setLoading(false)},1000)
         }
+    }
+    LoadingState()
     }, [])
     if (loading){
         return(

@@ -3,18 +3,16 @@ import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import CartWidget from './CartWidget'
 import { Link } from "react-router-dom"
-import { useCart } from '../context/cartContext'
+import imgLogo from '../img/iboxlogo.png'
 
 function NavBar(){
-    const items = useCart();
-    const reducedItems = items.reduce((acc, b) => acc + b.quantity, 0)
     return (
         <Navbar bg="dark" variant="dark" sticky="top">
             <Container fluid>
                 <Navbar.Brand as={Link} to="/">
                     <img
                     alt="Logo de Infinity-Box"
-                    src="iboxlogo.png"
+                    src={imgLogo}
                     width="60"
                     height="60"
                     className="d-inline-block"

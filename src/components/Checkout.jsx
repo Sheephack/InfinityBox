@@ -3,13 +3,11 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import { getData } from '../firebase'
-import { doc, setDoc } from "firebase/firestore";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
-import { useCart, useDispatchCart } from "../context/cartContext";
+import { useCart } from "../context/cartContext";
 import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import '../scss/override.scss'
 
-const MySwal = withReactContent(Swal)
 
 export default function Checkout({...props}) {
     const [show, setShow] = useState(false);

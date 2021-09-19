@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { FiShoppingCart } from "react-icons/fi";
 import { useCart } from '../context/cartContext'
 import Badge from 'react-bootstrap/Badge'

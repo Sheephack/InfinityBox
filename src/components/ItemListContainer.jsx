@@ -7,7 +7,9 @@ function ItemListContainer(){
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(false);
     
-    useEffect(async () =>{
+    useEffect(() =>{
+
+        async function fetchData(){
         try {
             setLoading(true);
             const productsCollection = collection(getData(), 'productos')
@@ -20,6 +22,8 @@ function ItemListContainer(){
             setLoading(false)
             console.log("error")
         }
+    }
+    fetchData()
     }, [])
     
     if(loading){

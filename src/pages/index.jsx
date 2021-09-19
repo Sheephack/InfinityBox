@@ -4,46 +4,26 @@ import slide from '../img/slide1.jpg'
 import slide2 from '../img/slide2.jpg'
 import slide3 from '../img/slide3.jpg'
 import PortraitItem from '../components/PortraitItem'
-import { doc, getDocs, query, where, collection } from "firebase/firestore";
+import { getDocs, query, where, collection } from "firebase/firestore";
 import { useEffect, useState } from 'react'
 import { getData } from '../firebase'
 
 function Index(){
     const [promo, setPromo] = useState([])
-    const [loading, setLoading] = useState(false);
 
-//     useEffect( async() =>{
-//         try{
-//             const docRef = doc(getData(), "productos", "mGdVZX5LbmOwMoCUjGtS");
-//             const docSnap = await getDoc(docRef);
-
-//             if (docSnap.exists()) {
-//             console.log("Document data:", docSnap.data());
-//             const finalProd = {id: docSnap.id, ...docSnap.data()};
-//             setPromo(finalProd)
-//             } else {
-//             console.log("No such document!");
-//             }
-//         }catch{
-//             console.log("error")
-//         }
-// }, [])
-
-useEffect(async () =>{
-    try {
-        setLoading(true);
-        const productsCollection = query(collection(getData(), 'productos'),where('onFrontPage', "==", true ))
-        const productsSnapshot = await getDocs(productsCollection);
-        const productsList = productsSnapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
-        setPromo(productsList);
-        
-    } catch (error){
-        
-        console.log("error")
-    }finally {
-        setLoading(false)
-    }
-}, [])
+    useEffect(() =>{
+        async function fetchData(){
+        try {
+            const productsCollection = query(collection(getData(), 'productos'),where('onFrontPage', "==", true ))
+            const productsSnapshot = await getDocs(productsCollection);
+            const productsList = productsSnapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
+            setPromo(productsList);
+        } catch (error){
+            console.log("error")
+        }
+        }
+    fetchData()
+    }, [])
 
 
     return(

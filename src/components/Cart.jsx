@@ -11,7 +11,7 @@ const CartItem = ({ product, index, handleRemove }) => {
     <article style={{"color": "white"}}>
       <div>
         <div>
-          <img src={product.pictureUrl} className="img-fluid" />
+          <img src={product.pictureUrl} className="img-fluid" alt={`imagen de ${product.title}`}/>
         </div>
         <div>
           <h1>{product.title}</h1>

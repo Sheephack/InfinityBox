@@ -48,6 +48,7 @@ body{
   .itemList{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin: 3rem;
     height: 700px;
   }
@@ -119,4 +120,10 @@ body{
   
   .spaceInWidget{
       margin-left: 0.1rem;
+  }
+
+  .itemListContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }

@@ -13,7 +13,17 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 
 ![alt text](https://media.giphy.com/media/HtXAfIeJBFSiZ5zXOZ/giphy.gif?cid=790b761100663205c06b2fdd17e21e63c4c2682ed7fae873&rid=giphy.gif&ct=g)
 
-# Versión 1.1
+# Versión 1.2
+- Se solucionan multiples advertencias de compilación de React.
+    - Se solucionan problemas en algunas funciones async.
+- Se añade uso de key en mapeo de items.
+- Se añaden `16` productos a Firestore de diferentes rarezas para poder generar categorias mas populosas.
+- Se modifica el comportamiento del `ItemListContainer` para poder albergar los nuevos productos.
+- Se modifica la estetica general de todos los productos para alinearlos con los nuevos.
+- Se soluciona problema de interacción con `Checkout`. (No se podia interactuar con el componente)
+- Se elimina `iboxlogo.png` de la carpeta public y se ubica en un correcto lugar.
+
+## Versión 1.1
 - Se hacen mejoras generales y reformas esteticas del `index.html`
 - Se comienza un cambio estetico del sitio y adaptabilidad para entrega final.
 - Se crean nuevos (3) productos en Firestore:

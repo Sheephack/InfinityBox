@@ -9,7 +9,8 @@ function ItemDetailContainer(){
     const [loading, setLoading] = useState(false);
     const { id } = useParams();
     
-    useEffect(async () =>{
+    useEffect(() =>{
+    async function fetchData (){
         try {
             setLoading(true);
             const docRef = doc(getData(), "productos", id)
@@ -27,7 +28,9 @@ function ItemDetailContainer(){
             setTimeout(() => {setLoading(false)},1000)
         }
             
-    }, [])
+    }
+    fetchData()
+}, [id])
     if(loading){
         return <div className="centerScreen"><div className="lds-ring"><div></div><div></div><div></div><div></div></div></div>
     }

@@ -13,7 +13,15 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 
 ![alt text](https://media.giphy.com/media/HtXAfIeJBFSiZ5zXOZ/giphy.gif?cid=790b761100663205c06b2fdd17e21e63c4c2682ed7fae873&rid=giphy.gif&ct=g)
 
-# Versión 1.2
+# Versión 1.3
+- Se incorporan categorias organicas dentro del proyecto.
+    - Se añade el componente `Menu` que contiene el menu desplegable con las categorias con llamada async.
+    - Se modifica el componente `ItemListContainer` para recibir llamados por categorias y por la totalidad de los productos.
+    - Se crea una nueva coleccion en Firestore para almacenar datos de categorias.
+    - Se modifica el comportamiento del router para redireccionar las categorias por su nombre.
+- Se añaden estilos para la barra de desplazamiento lateral en `_scrollbars.scss`
+
+## Versión 1.2
 - Se solucionan multiples advertencias de compilación de React.
     - Se solucionan problemas en algunas funciones async.
 - Se añade uso de key en mapeo de items.

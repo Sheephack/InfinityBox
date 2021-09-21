@@ -9,10 +9,12 @@ import Index from './pages/index'
 import AboutUs from './pages/about'
 import { CartProvider} from './context/cartContext'
 import Cart from './components/Cart'
+import ItemListContainer from './components/ItemListContainer';
 
 
 
 function App() {
+  
   return (
       <CartProvider >
         <BrowserRouter>
@@ -23,6 +25,10 @@ function App() {
             </Route>
             <Route exact path="/products">
               <Products />
+            </Route>
+            <Route path="/categories/:categoryId">
+              <Index />
+              <ItemListContainer />
             </Route>
             <Route exact path="/item/:id">
               <ItemDetailContainer />

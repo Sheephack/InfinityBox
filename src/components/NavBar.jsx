@@ -4,8 +4,29 @@ import Nav from 'react-bootstrap/Nav'
 import CartWidget from './CartWidget'
 import { Link } from "react-router-dom"
 import imgLogo from '../img/iboxlogo.png'
+import Menu from './Menu'
+import { useEffect, useState } from 'react'
+import { collection, getDocs } from 'firebase/firestore'
+import { getData } from '../firebase'
 
 function NavBar(){
+    const [categories, setCategories] = useState([])
+
+    useEffect(() =>{
+        async function fetchData(){
+        try {
+            const categoriesCollection = collection(getData(), 'categories')
+            const categoriesSnapshot = await getDocs(categoriesCollection);
+            const categoriesList = categoriesSnapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
+            setCategories(categoriesList);
+        } catch (error){
+            console.log("error")
+        }
+    }
+    fetchData()
+    }, [])
+
+
     return (
         <Navbar bg="dark" variant="dark" sticky="top">
             <Container fluid>
@@ -20,7 +41,7 @@ function NavBar(){
                 Infinity-Box
                 </Navbar.Brand>
                 <Nav className="justify-content-end">
-                    <Nav.Link as={Link} to="/products">Productos</Nav.Link>
+                    <Menu categories={categories} />
                     <Nav.Link as={Link} to="/about">Nosotros</Nav.Link>
                     <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
                     <Nav.Link as={Link} to="/cart"><CartWidget /></Nav.Link>

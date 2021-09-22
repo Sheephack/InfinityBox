@@ -1,0 +1,67 @@
+footer{
+    padding-top: 12.5rem;
+    background-image: url(../img/footer-img.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-areas: 
+    "info sub"
+    "copy copy";
+    grid-template-columns: 60% 40%;
+    flex-grow: 0;
+    color: azure;
+
+    .info{
+        grid-area: info;
+        height: 200px;
+        background-color: #212529;
+        padding: 2rem;
+        border-top:0.1rem solid black;
+        display: flex;
+        width: 100%;
+        
+        &__logo{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            
+            &__img{
+                width: 70px;
+            }
+
+            &__text{
+
+                &__title{
+                    padding-left: 1rem;
+                }
+                p{
+                    padding-left: 1rem;
+                }
+            }
+
+        }
+    }
+
+    .subscribe{
+        padding-top: 1.5rem;
+        grid-area: sub;
+        border-top:0.1rem solid black;
+        background-color: #212529;
+
+        .input{
+            width: 50%;
+        }
+    }
+
+    .copyright{
+        height: 3rem;
+        grid-area: copy;
+        border-top:0.1rem solid black;
+        background-color: #212529;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+

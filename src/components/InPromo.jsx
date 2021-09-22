@@ -2,12 +2,12 @@ import Carousel from 'react-bootstrap/Carousel'
 import slide from '../img/slide1.jpg'
 import slide2 from '../img/slide2.jpg'
 import slide3 from '../img/slide3.jpg'
-import PortraitItem from '../components/PortraitItem'
+import PortraitItem from './PortraitItem'
 import { getDocs, query, where, collection } from "firebase/firestore";
 import { useEffect, useState } from 'react'
 import { getData } from '../firebase'
 
-function Index(){
+function InPromo(){
     const [promo, setPromo] = useState([])
 
     useEffect(() =>{
@@ -65,15 +65,9 @@ function Index(){
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
-        <div className="container">
-            <div className="centerTittle" id="midPageId">
-                <h2>¿Como funcionamos?</h2>
-            </div>
-        </div>
-
         </>
     )
 
 }
 
-export default Index
+export default InPromo

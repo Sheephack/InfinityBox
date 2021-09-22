@@ -10,10 +10,22 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 - Nodemon
 - Firebase
 - SweetAlerts2
+- React-router-dom
+- React-router-hash-link
 
 ![alt text](https://media.giphy.com/media/HtXAfIeJBFSiZ5zXOZ/giphy.gif?cid=790b761100663205c06b2fdd17e21e63c4c2682ed7fae873&rid=giphy.gif&ct=g)
 
-# Versión 1.3
+# Versión 1.4
+- Implementación de React-router-hash-link para generar movimiento interno entre hash's usando Router al cargar las categorias.
+    - Se modifica las importaciones del componente `Menu` para reflejar este cambio.
+- La pagina renderizada en `Index.jsx` paso a ser un componente llamado `InPromo.jsx`.
+- Se crea el componente `About.jsx` con instrucciones de funcionamiento del e-commerce y CTA a explorar todos los productos.
+- Se incorpora el componente `ItemListContainer` dentro del sitio de forma organica. (Faltan detalles y re organizar)
+- Se crea el componente `Footer.jsx` con sección de contacto. (Se programa para realizar, el envio de correo electronico a Firebase)
+- Se crean imagenes de estilado `about-img.png` y `footer-img.png` para generar coherencia grafica.
+- Se añaden estilos para el footer en `_footer.scss`
+
+## Versión 1.3
 - Se incorporan categorias organicas dentro del proyecto.
     - Se añade el componente `Menu` que contiene el menu desplegable con las categorias con llamada async.
     - Se modifica el componente `ItemListContainer` para recibir llamados por categorias y por la totalidad de los productos.
@@ -30,6 +42,8 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 - Se modifica la estetica general de todos los productos para alinearlos con los nuevos.
 - Se soluciona problema de interacción con `Checkout`. (No se podia interactuar con el componente)
 - Se elimina `iboxlogo.png` de la carpeta public y se ubica en un correcto lugar.
+- Se programa la eliminación de los componentes dentro del directorio `pages` a fin de hacer mas organico el proceso de reemplazo de componentes.
+- Se cambia el background del sitio por una animación sutil de degradado.
 
 ## Versión 1.1
 - Se hacen mejoras generales y reformas esteticas del `index.html`

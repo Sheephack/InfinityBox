@@ -15,7 +15,21 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 
 ![alt text](https://media.giphy.com/media/HtXAfIeJBFSiZ5zXOZ/giphy.gif?cid=790b761100663205c06b2fdd17e21e63c4c2682ed7fae873&rid=giphy.gif&ct=g)
 
-# Versión 1.4
+# Versión 1.5
+- Se implementa collección de guardado de e-mails de usuarios registrados en el footer.
+- Se arregla el problema de que el formulario de `Checkout.jsx` no se reseteaba tras su uso.
+- Se reemplaza div generado con Spinner en `ItemListContainer`
+    - Se optimiza el loader.
+    - Se elimina `setTimeout` del loader, ya que quedo de una iteracion con JSON local para simular tiempos de carga.
+- Se reestiliza `ItemListContainer`, `ItemCount`, `Item` e `ItemDetail` para generar una lista ordenada con menos detalles y mas funcional en `_items.scss`.
+- Se eliminan los `console.log()` de todos los componentes que ya no lo requieren. (Se planifica implementar metodos alternativos para async catch).
+- Se añade Toast de SweetAlerts2 al agregar items al carrito, al removerlos y al enviar el mail para recibir novedades en el footer.
+- Se añade Hashlink a componente `PortraitItem` para redireccionar al usuario al sector de compras.
+- Se elimina directorio `data` que estaba en desuso luego de implementar Firestore.
+- Se elimina `contact.jsx`, `about.jsx` y `products.jsx`, o sea, la totalidad de la carpeta `pages` debido a la nueva funcionalidad de los componentes de representación.
+    - Se modifica el Router en función de este cambio.
+
+## Versión 1.4
 - Implementación de React-router-hash-link para generar movimiento interno entre hash's usando Router al cargar las categorias.
     - Se modifica las importaciones del componente `Menu` para reflejar este cambio.
 - La pagina renderizada en `Index.jsx` paso a ser un componente llamado `InPromo.jsx`.

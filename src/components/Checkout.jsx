@@ -58,6 +58,7 @@ export default function Checkout({...props}) {
         })
         }
         handleBuy()
+        e.target.reset();
       } else {
         setData({
           name: '',

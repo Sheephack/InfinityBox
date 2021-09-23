@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail'
 import { doc, getDoc } from 'firebase/firestore'
 import { getData } from '../firebase'
+import Spinner from 'react-bootstrap/Spinner'
 
 function ItemDetailContainer(){
     const [products, setProducts] = useState([])
@@ -25,14 +26,14 @@ function ItemDetailContainer(){
             console.log(id)
             console.log("error")
         } finally {
-            setTimeout(() => {setLoading(false)},1000)
+            setLoading(false)
         }
             
     }
     fetchData()
 }, [id])
     if(loading){
-        return <div className="centerScreen"><div className="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+        return <div className="spinnerLoader"><Spinner animation="border" variant="warning"/></div>
     }
 
     return (

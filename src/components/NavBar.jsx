@@ -2,7 +2,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import CartWidget from './CartWidget'
-import { Link } from "react-router-dom"
+import { HashLink as Link } from "react-router-hash-link"
 import imgLogo from '../img/iboxlogo.png'
 import Menu from './Menu'
 import { useEffect, useState } from 'react'
@@ -42,8 +42,8 @@ function NavBar(){
                 </Navbar.Brand>
                 <Nav className="justify-content-end">
                     <Menu categories={categories} />
-                    <Nav.Link as={Link} to="/about">Nosotros</Nav.Link>
-                    <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
+                    <Nav.Link as={Link} to="/about#aboutLink">Nosotros</Nav.Link>
+                    <Nav.Link as={Link} to="/contact#contactLink">Contacto</Nav.Link>
                     <Nav.Link as={Link} to="/cart"><CartWidget /></Nav.Link>
                 </Nav>
             </Container>

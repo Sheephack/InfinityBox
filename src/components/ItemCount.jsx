@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import Button from "react-bootstrap/Button"
 
 function ItemCount({onAdd, stock, items} , props){
-    // const [count, setCount] = useState(items);
     const [disableUp, setDisableUp] = useState(false);
     const [disableDown, setDisableDown] = useState(true);
 
@@ -38,13 +37,11 @@ function ItemCount({onAdd, stock, items} , props){
     },[items, props]);
     
     return(
-        <>
-            <h1>Contador: {items}</h1>
-            <Button id="add" disabled={disableUp} variant="outline-light" onClick={suma}>Sumar Item</Button>
-            <Button variant="outline-light" disabled={disableDown} onClick={resta}>Restar Item</Button> <br />
-            
-            <div id="countDisplay"></div>
-        </>
+        <div className="counter">
+            <Button variant="outline-warning" disabled={disableDown} onClick={resta}>-</Button>
+            <h4 className="counter_count">{items}</h4>
+            <Button id="add" disabled={disableUp} variant="outline-warning" onClick={suma}>+</Button>
+        </div>
     )
 }
 

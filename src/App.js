@@ -1,11 +1,9 @@
 import 'bootstrap/scss/bootstrap.scss'
 import './scss/styles.scss';
 import NavBar from './components/NavBar'
-import Contact from './pages/contact'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer'
 import InPromo from './components/InPromo'
-import AboutUs from './pages/about'
 import { CartProvider} from './context/cartContext'
 import Cart from './components/Cart'
 import ItemListContainer from './components/ItemListContainer';
@@ -33,10 +31,8 @@ function App() {
               <ItemDetailContainer />
             </Route>
             <Route exact path="/contact">
-              <Contact />
             </Route>
             <Route exact path="/about">
-              <AboutUs />
             </Route>
             <Route>
               <Cart exact path="/cart" />

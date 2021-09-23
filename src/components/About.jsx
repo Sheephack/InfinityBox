@@ -8,7 +8,7 @@ import { HashLink as Link } from "react-router-hash-link"
 
 function About(){
     return(
-        <div className="about__container">
+        <div className="about__container" id="aboutLink">
             <h2>¿Como funcionamos?</h2>
             <p>Es tan facil como seguir estos pasos:</p>
             <div className="about__container__body">

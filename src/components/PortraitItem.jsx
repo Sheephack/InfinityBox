@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom'
+import { HashLink as Link } from "react-router-hash-link"
 import { useState, useEffect } from 'react'
 import Spinner from 'react-bootstrap/Spinner'
 
@@ -9,19 +9,16 @@ export default function PortraitItem(props) {
 
     const [loading, setLoading] = useState(false)
     useEffect(() =>{
-
         async function LoadingState(){
-
-        
-        try {
-            setLoading(true);
-        } catch (error){
-            setLoading(false)
-            console.log("error")
-        }finally{
-            setTimeout(() => {setLoading(false)},1000)
+            try {
+                setLoading(true);
+            } catch (error){
+                setLoading(false)
+                console.log("error")
+            }finally{
+                setTimeout(() => {setLoading(false)},1000)
+            }
         }
-    }
     LoadingState()
     }, [])
     if (loading){
@@ -41,7 +38,7 @@ export default function PortraitItem(props) {
                 <Card.Title>{props.title}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">Caja {props.rarity}</Card.Subtitle>
             </Card.Body>
-                <Button variant="outline-warning" className="portraitCard__btn" as={Link} to={`/item/${props.id}`}>Ver más</Button>
+                <Button variant="outline-warning" className="portraitCard__btn" as={Link} to={`/item/${props.id}#categorySpawn`}>Ver más</Button>
         </Card>
 
     )

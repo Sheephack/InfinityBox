@@ -6,7 +6,6 @@ import Checkout from "./Checkout";
 
 const CartItem = ({ product, index, handleRemove }) => {
   const itemsFullPrice = product.price * product.quantity
-  console.log(itemsFullPrice)
   return (
     <article style={{"color": "white"}}>
       <div>
@@ -41,12 +40,8 @@ export default function Store() {
   for (const prices of items){
     const finalPrice = prices.price * prices.quantity
     subPrice.push(finalPrice)
-    console.log("precio final", finalPrice)
-    console.log("array final", subPrice)
-    console.log(totalPrice)
     totalPrice = subPrice.reduce((a, b) => a + b)
   }
-  console.log(items)
 
   const handleRemove = (index) => {
     dispatch({ type: "REMOVE", index });

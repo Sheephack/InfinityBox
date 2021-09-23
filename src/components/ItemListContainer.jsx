@@ -3,6 +3,7 @@ import ItemList from './ItemList'
 import { collection, getDocs, query, where } from 'firebase/firestore'
 import { getData } from '../firebase'
 import { useParams } from 'react-router'
+import Spinner from 'react-bootstrap/Spinner'
 
 function ItemListContainer(){
     const [products, setProducts] = useState([])
@@ -18,13 +19,13 @@ function ItemListContainer(){
                 const productsSnapshot = await getDocs(productsCollection);
                 const productsList = productsSnapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
                 setProducts(productsList);
-                setTimeout(() => {setLoading(false)},1000)
+                setLoading(false)
             }else{
                 const productsCollection = collection(getData(), 'productos')
                 const productsSnapshot = await getDocs(productsCollection);
                 const productsList = productsSnapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
                 setProducts(productsList);
-                setTimeout(() => {setLoading(false)},1000)
+                setLoading(false)
             }
         } catch (error){
             setLoading(false)
@@ -35,9 +36,9 @@ function ItemListContainer(){
     }, [categoryId])
     
     if(loading){
-        return <div className="centerScreen"><div className="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+        return <div className="spinnerLoader"><Spinner animation="border" variant="warning" /></div>
     }
-    return loading ? <h2>Cargando...</h2> : <ItemList products={products} />
+    return <ItemList products={products} />
 
 }
 export default ItemListContainer

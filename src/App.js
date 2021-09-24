@@ -16,23 +16,33 @@ function App() {
       <CartProvider >
         <BrowserRouter>
           <NavBar />
-          <InPromo />
-          <About />
           <Switch>
             <Route exact path="/">
+              <InPromo />
+              <About />
             </Route>
             <Route exact path="/products">
+            <InPromo />
+              <About />
               <ItemListContainer />
             </Route>
             <Route path="/categories/:categoryId">
+            <InPromo />
+              <About />
               <ItemListContainer />
             </Route>
             <Route exact path="/item/:id">
+            <InPromo />
+              <About />
               <ItemDetailContainer />
             </Route>
             <Route exact path="/contact">
+            <InPromo />
+              <About />
             </Route>
             <Route exact path="/about">
+            <InPromo />
+              <About />
             </Route>
             <Route>
               <Cart exact path="/cart" />

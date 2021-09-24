@@ -30,17 +30,12 @@ export default function Checkout({...props}) {
     };
     function handleSubmit(e) {
       e.preventDefault();
-      console.log('Datos del cliente:', data);
       if (data.mail === data.mailConf) {
-        console.log('RESULTADO!');
         const subPrice = []
         let totalPrice
         for (const prices of itemsInCart){
           const finalPrice = prices.price * prices.quantity
           subPrice.push(finalPrice)
-          console.log("precio final", finalPrice)
-          console.log("array final", subPrice)
-          console.log(totalPrice)
           totalPrice = subPrice.reduce((a, b) => a + b)
         }
         const handleBuy = async() =>{
@@ -66,13 +61,18 @@ export default function Checkout({...props}) {
           mailConf: '',
           tel: 0
         });
-        console.log('Datos del cliente:', data);
+        Swal.fire({
+          icon: 'error',
+          title: '¡Ojo!',
+          text: `Tus e-mails no coinciden, por favor verificar.`,
+        })
+        e.target.reset();
       }
     }
   
     return (
       <>
-        <Button variant="outline-light" onClick={handleShow}>
+        <Button variant="success" onClick={handleShow}>
           Finalizar compra e ir a Checkout
         </Button>
   
@@ -102,13 +102,13 @@ export default function Checkout({...props}) {
                 <br />
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Floating className="mb-3">
-                        <Form.Control type="email" placeholder="Enter email" onChange={handleInputChange} name="mail" />
+                        <Form.Control required type="email" placeholder="Enter email" onChange={handleInputChange} name="mail" />
                         <Form.Label>Dirección de Email</Form.Label>
                     </Form.Floating>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formReEnterEmail">
                     <Form.Floating className="mb-3">
-                        <Form.Control type="email" placeholder="Enter email" onChange={handleInputChange} name="mailConf"/>
+                        <Form.Control required type="email" placeholder="Enter email" onChange={handleInputChange} name="mailConf"/>
                         <Form.Text className="text-muted">
                         No compartiremos tu Email con nadie, solo es para verificar tu compra.
                         </Form.Text>
@@ -117,15 +117,12 @@ export default function Checkout({...props}) {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Floating className="mb-3">
-                        <Form.Control type="tel" placeholder="Telefono" onChange={handleInputChange} name="tel" />
+                        <Form.Control required type="tel" placeholder="Telefono" onChange={handleInputChange} name="tel" />
                         <Form.Label>Telefono</Form.Label>
                     </Form.Floating>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="primary" type="submit" >
-                    Submit
+                <Button variant="success" type="submit" >
+                    ¡Finalizar Compra!
                 </Button>
             </Form>
           </Offcanvas.Body>

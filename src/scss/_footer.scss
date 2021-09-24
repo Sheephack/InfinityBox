@@ -9,7 +9,7 @@ footer{
     "info sub"
     "copy copy";
     grid-template-columns: 60% 40%;
-    flex-grow: 0;
+    flex-shrink: 0;
     color: azure;
 
     .info{

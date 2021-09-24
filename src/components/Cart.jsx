@@ -1,22 +1,21 @@
 import React from "react";
 import { useCart, useDispatchCart } from "../context/cartContext";
 import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom'
+import { HashLink as Link } from "react-router-hash-link"
 import Checkout from "./Checkout";
+import { FaRegTrashAlt } from 'react-icons/fa'
 
 const CartItem = ({ product, index, handleRemove }) => {
   const itemsFullPrice = product.price * product.quantity
   return (
-    <article style={{"color": "white"}}>
-      <div>
-        <div>
+    <article className="inCartItem">
+      <div className="inCartItem_container">
+        <div className="inCartItemImgContainer">
           <img src={product.pictureUrl} className="img-fluid" alt={`imagen de ${product.title}`}/>
         </div>
-        <div>
-          <h1>{product.title}</h1>
-          <h2>{product.description}</h2>
+        <div className="inCartItem_container_text">
+          <h3>{product.title}</h3>
           <p>
-            <span>Precio</span>
             <span>
               {itemsFullPrice.toLocaleString("en", {
                 style: "currency",
@@ -24,9 +23,9 @@ const CartItem = ({ product, index, handleRemove }) => {
               })}
             </span>
           </p>
-          <button onClick={() => handleRemove(index)}>Quitar del carrito</button>
         </div>
       </div>
+          <Button variant="danger" onClick={() => handleRemove(index)}><FaRegTrashAlt/></Button>
     </article>
   );
 };
@@ -49,30 +48,42 @@ export default function Store() {
 
   if (items.length === 0) {
     return (
-      <main style={{"color": "white"}}>
+      <main className="cartContainer">
+        <div className="cartContainer_info">
+        <div className="cartTitle">
+          <h2>Mi carrito de compras:</h2>
+          <hr />
+        </div>
         <p>El carrito esta vacio</p>
-        <Button as={Link} variant="outline-light" to={`/products`}>Volver a todos los productos</Button>
+        <Button as={Link} variant="warning" to={`/products#categorySpawn`}>Volver a todos los productos</Button>
+      </div>
       </main>
     );
   }
   return (
-    <main style={{"color": "white"}}>
-      <p>
-        Precio total:{" "}
-        {totalPrice.toLocaleString("en", {
-          style: "currency",
-          currency: "ARS"
-        })}
-      </p>
-      {items.map((item, index) => (
-        <CartItem
-          handleRemove={handleRemove}
-          key={index}
-          product={item}
-          index={index}
-        />
-      ))}
-      <Checkout placement='end'></Checkout>
+    <main className="cartContainer">
+      <div className="cartContainer_info">
+        <div className="cartTitle">
+          <h2>Mi carrito de compras:</h2>
+          <hr />
+        </div>
+        <p>
+          Precio total:{" "}
+          {totalPrice.toLocaleString("en", {
+            style: "currency",
+            currency: "ARS"
+          })}
+        </p>
+        {items.map((item, index) => (
+          <CartItem
+            handleRemove={handleRemove}
+            key={index}
+            product={item}
+            index={index}
+          />
+        ))}
+        <Checkout placement='end'></Checkout>
+      </div>
     </main>
   );
 }

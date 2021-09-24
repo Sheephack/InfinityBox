@@ -4,12 +4,14 @@
 @import "footer";
 @import "items";
 
+
+html{
+  width: 100%;
+  height: 100%;
+}
 body{
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
   background: linear-gradient(222deg, #121212, #101010, #3d3d3d);
   background-size: 600% 600%;
   -webkit-animation: AnimationName 32s ease infinite;
@@ -19,7 +21,7 @@ body{
 
 #root{
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +29,7 @@ body{
   .navbar{
     width: 100%;
     height: 5rem;
+    flex-shrink: 0;
   }
 }
 .App {

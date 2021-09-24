@@ -7,7 +7,7 @@ function Menu({ categories }){
             {categories.map((category) => (
                <NavDropdown.Item as={Link} to={`/categories/${category.key}#categorySpawn`} key={category.id}>{`${category.description}`}</NavDropdown.Item>
             ))}
-            <NavDropdown.Item as={Link} to="/products">Todos los productos</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/products#categorySpawn">Todos los productos</NavDropdown.Item>
         </NavDropdown>
     )
 }

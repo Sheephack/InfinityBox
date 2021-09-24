@@ -48,7 +48,6 @@
             margin: 0 2rem;
             padding: 2rem;
             height: 50%;
-            // border: 1px solid #ffc107;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -99,4 +98,51 @@
         align-items: center;
     }
 
+}
+
+// En el CARRITO
+
+.cartContainer{
+    background-image: url(../img/about-img.png);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: top;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+
+    &_info{
+        width: 90%;
+    }
+    .cartTitle{
+        margin-top: 1rem;
+
+        hr{
+            width: 85%;
+        }
+    }
+
+}
+
+.inCartItem{
+    margin: 1rem;
+    width: 50%;
+    border: 1px solid #ffc107;
+    display: flex;
+    flex-direction: row;
+
+    &_container{
+        display: flex;
+        width: 100%;
+
+        &_text{
+            margin: 1rem;
+        }
+    }
+
+    .inCartItemImgContainer{
+        width: 150px;
+    }
 }

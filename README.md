@@ -15,7 +15,27 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 
 ![alt text](https://media.giphy.com/media/HtXAfIeJBFSiZ5zXOZ/giphy.gif?cid=790b761100663205c06b2fdd17e21e63c4c2682ed7fae873&rid=giphy.gif&ct=g)
 
-# Versión 1.5
+# Versión 1.6
+- Se reemplaza `favicon.ico`, `logo192.png` y `logo512.png` por las versiones correctas asociadas al sitio.
+- Se elimina el componente `CheckoutToggler` ya que quedo en desuso.
+- Se añaden estilos al componente `Cart.jsx`
+    - Se estiliza los items del carrito para ser mas atractivos y funcionales.
+    - Se estiliza el carrito aun cuando esta vacio
+    - Se adapta el sitio para matener el footer en la seccion inferior de la pagina cuando el contenido es muy poco en el main.
+    - Se añade uso de Router-Hash en link de "Ver todos los productos" del Carrito vacio.
+- Se reordenan los componentes en el Router, para evitar que el resto del sitio sea mostrado en la vista de carrito.
+- Mejoras generales en `Checkout.jsx`:
+    - Se mejora la logica de confirmación de e-mail. Ahora al ser diferentes, arroja mensaje via SweetAlerts2 y resetea el formulario.
+    - Se añade `required` a todos los elementos del form.
+    - Se estiliza correctamente el botón de enviar formulario.
+    - Se elimina Checkbox innecesario.
+    - Se eliminan todos los `console.log()` que se disparaban al enviar una compra.
+- Se cambia el link de "Volver a todos los productos" del `ItemDetail` a "Volver al listado de la categoria", evitando mostrar todos los productos para volver atras.
+- Se crea el componente `Brief.jsx` (Vacio)
+- Se modifica el comportamiento del link "Todos los productos" en el componente `Menu.jsx` para utilizar Router-Hash.
+- Se realizan cambios menores en Readme.md.
+
+## Versión 1.5
 - Se implementa collección de guardado de e-mails de usuarios registrados en el footer.
 - Se arregla el problema de que el formulario de `Checkout.jsx` no se reseteaba tras su uso.
 - Se reemplaza div generado con Spinner en `ItemListContainer`
@@ -121,12 +141,10 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
     - Genera un boton susceptible de tener llamada con stock y valor inicial, devuelve el valor elegido en consola.
 
 ## Versión 0.2
-
 - Se añade componentes `CartWidget`, `ItemListContainer`
     - `CartWidget` genera represantacion en `NavBar` de un carrito.
     - `ItemListContainer` por el momento solo contiene un saludo en forma de props.
 
 ### Versión 0.1
-
 - Se añade componente `NavBar`
 - Se utiliza Bootstrap React para estilos.

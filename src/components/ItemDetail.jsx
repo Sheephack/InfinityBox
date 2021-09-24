@@ -69,7 +69,7 @@ function ItemDetail(props){
                     {items.length > 0 && <Button variant="outline-danger" onClick={handleRemove} className="addedButtons"><FaRegTrashAlt/></Button>}
                 </div>
             </Card>
-            <Button as={Link} to={`/products`} variant="outline-warning">Volver a todos los productos</Button>
+            <Button as={Link} to={`/categories/${props.category}#categorySpawn`} variant="outline-warning">Volver al listado de la categoria</Button>
         </div>
     )
 }

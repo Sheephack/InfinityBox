@@ -1,7 +1,7 @@
 import 'bootstrap/scss/bootstrap.scss'
 import './scss/styles.scss';
 import NavBar from './components/NavBar'
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer'
 import InPromo from './components/InPromo'
 import { CartProvider} from './context/cartContext'
@@ -14,7 +14,7 @@ function App() {
   
   return (
       <CartProvider >
-        <BrowserRouter>
+        
           <NavBar />
           <Switch>
             <Route exact path="/">
@@ -49,7 +49,7 @@ function App() {
             </Route>
           </Switch>
           <Footer />
-        </BrowserRouter>
+        
       </CartProvider>
       
   );

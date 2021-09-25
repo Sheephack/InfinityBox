@@ -4,10 +4,12 @@ import ItemDetail from './ItemDetail'
 import { doc, getDoc } from 'firebase/firestore'
 import { getData } from '../firebase'
 import Spinner from 'react-bootstrap/Spinner'
+import { FaRegSadTear } from 'react-icons/fa'
 
 function ItemDetailContainer(){
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(false);
+    const [notFound, setNotFound] = useState(false);
     const { id } = useParams();
     
     useEffect(() =>{
@@ -19,12 +21,11 @@ function ItemDetailContainer(){
             if (docSnap.exists()){
                 setProducts(docSnap.data())
             }else{
-                console.log("no document")
+                setNotFound(true)
             }
         } catch (error){
             setLoading(false)
-            console.log(id)
-            console.log("error")
+            setNotFound(true)
         } finally {
             setLoading(false)
         }
@@ -35,7 +36,13 @@ function ItemDetailContainer(){
     if(loading){
         return <div className="spinnerLoader"><Spinner animation="border" variant="warning"/></div>
     }
-
+    if(notFound){
+        return (
+        <div className="errorLoading">
+            <h3>Algo esta mal o ¡Este item no se encuentra dentro de nuestras cajitas!</h3>
+            <FaRegSadTear className="errorLoading-Icon" />
+        </div>
+    )}
     return (
         <ItemDetail {...products} />
     )

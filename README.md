@@ -15,7 +15,15 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 
 ![alt text](https://media.giphy.com/media/HtXAfIeJBFSiZ5zXOZ/giphy.gif?cid=790b761100663205c06b2fdd17e21e63c4c2682ed7fae873&rid=giphy.gif&ct=g)
 
-# Versión 1.6
+# Versión 1.7 (RC)
+- Se añade lógica de borrado de carrito tras enviar compra a `Checkout.jsx`.
+- Se separa de `Cart.jsx` la renderización, de los items del cart y ahora se importa desde `CartItem.jsx` (nuevo componente).
+- Se crea `BriefItem.jsx` para ser renderizado en `Brief.jsx` dentro del `Checkout.jsx` (Contiene funcionalidad de remoción de items).
+- Se añade lógica de renderización de mensaje 404 (no literal) al no encontrar un item de la lista de productos al ingresar una ruta con id inexistente, o con desconexion con Firestore.
+- Se añade un valor nuevo al objeto de creación de orden llamado "state".
+- Se prepara el sitio para su deployment final.
+
+## Versión 1.6
 - Se reemplaza `favicon.ico`, `logo192.png` y `logo512.png` por las versiones correctas asociadas al sitio.
 - Se elimina el componente `CheckoutToggler` ya que quedo en desuso.
 - Se añaden estilos al componente `Cart.jsx`

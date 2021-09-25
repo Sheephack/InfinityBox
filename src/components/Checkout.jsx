@@ -1,19 +1,21 @@
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from 'react'
+import { useDispatchCart } from '../context/cartContext'
 import Form from 'react-bootstrap/Form'
 import { getData } from '../firebase'
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { useCart } from "../context/cartContext";
 import Swal from 'sweetalert2'
 import '../scss/override.scss'
-
+import Brief from './Brief'
 
 export default function Checkout({...props}) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const itemsInCart = useCart();
+    const dispatch = useDispatchCart();
 
     const [data, setData] = useState({
       name: '',
@@ -44,7 +46,8 @@ export default function Checkout({...props}) {
           buyer: data,
           items: itemsInCart,
           date: Timestamp.fromDate(new Date()),
-          total: totalPrice
+          total: totalPrice,
+          state: "generated"
         })
         Swal.fire({
           icon: 'success',
@@ -54,6 +57,12 @@ export default function Checkout({...props}) {
         }
         handleBuy()
         e.target.reset();
+        const removeAll = async() => {
+        for (const items of itemsInCart){
+          dispatch({type: "REMOVE", items})
+        }}
+        removeAll()
+
       } else {
         setData({
           name: '',
@@ -81,6 +90,7 @@ export default function Checkout({...props}) {
             <Offcanvas.Title>Checkout</Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
+            <Brief />
             <Form onSubmit={handleSubmit}>
                 <Form.Label>
                         Para completar la compra, te pediremos un par de datos previos!

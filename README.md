@@ -25,10 +25,15 @@ La aplicación utiliza las siguientes dependencias:
 - SweetAlerts2 (libreria de JavaScript para mostrar alertas)
 - React-router-dom (para navegación)
 - React-router-hash-link (navegación entre hashs internos de la aplicación)
-- Gh-pages (hosteo en Github Pages)
 
 # **Versiones:**
-# Versión 1.8.4 (HotFix)
+# Versión 1.8.6 (HotFix)
+- Se intenta solucionar problema con hosteo en GitHub Pages.
+    - Se elimina dependencia, no genera resultados satisfactorios.
+## Versión 1.8.5 (HotFix)
+- Se intenta solucionar problema con hosteo en GitHub Pages.
+    - Se utiliza dependencia gh-pages, se utiliza metodo de dependencia.
+## Versión 1.8.4 (HotFix)
 - Se intenta solucionar problema con hosteo en GitHub Pages.
     - Se utiliza dependencia gh-pages, pero se utiliza metodo convencional.
 

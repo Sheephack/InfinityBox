@@ -47,5 +47,6 @@
   "devDependencies": {
     "node-sass": "^6.0.1",
     "nodemon": "^2.0.12"
-  }
+  },
+  "homepage": "https://sheephack.github.io/InfinityBox/"
 }

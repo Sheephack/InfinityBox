@@ -1,21 +1,43 @@
-# Infinity-Box
-Proyecto de E-Commerce usando React-app para Coderhouse, su finalidad es la de poder ser un sitio de venta de Lootboxes, de diferentes categorias y tematicas.
+# **Infinity-Box**
+E-Commerce de venta de Lootboxes usando Create-React-App.
 
-Actualmente se encuentran instaladas las siguientes dependencias por fuera de las recomendadas:
-- React-Bootstrap
-- Bootstrap
-- Bootstrap-icons
-- React-icons
-- Node-sass
-- Nodemon
-- Firebase
-- SweetAlerts2
-- React-router-dom
-- React-router-hash-link
+# Navegación:
+![alt text](./src/img/app-working.gif)
 
-![alt text](https://media.giphy.com/media/HtXAfIeJBFSiZ5zXOZ/giphy.gif?cid=790b761100663205c06b2fdd17e21e63c4c2682ed7fae873&rid=giphy.gif&ct=g)
+Se puede acceder online desde el siguiente link: [https://sheephack.github.io/InfinityBox/](https://sheephack.github.io/InfinityBox/)
 
-# Versión 1.7 (RC)
+# Instrucciones para usar la aplicación localmente:
+1. Descargar las dependencias desde el directorio raiz con:
+    ### `npm install`
+2. Correr la aplicación localmente en: [localhost:3000](http://localhost:3000) con:
+    ### `npm start` 
+3. Para hacer un build de deployment (produccíon) usar:
+    ### `npm build`
+
+# Dependencias:
+La aplicación utiliza las siguientes dependencias:
+- React-Bootstrap (Framework de estilos)
+- Bootstrap (por uso de clases)
+- Bootstrap-icons (uso de iconos)
+- React-icons (idem item superior)
+- Node-SASS (creación de estilos)
+- Firebase (uso de base de datos)
+- SweetAlerts2 (libreria de JavaScript para mostrar alertas)
+- React-router-dom (para navegación)
+- React-router-hash-link (navegación entre hashs internos de la aplicación)
+
+# **Versiones:**
+# Versión 1.8 (RELEASE)
+- Se cambia la estructura general de `Readme.md` para optimizar la documentación de la aplicación.
+    - Se hacen correcciones ortográficas.
+- Se cambia el GIF en `Readme.md` por la versión actualizada final de la aplicación.
+- Se añade la carpeta `.vscode` a `.gitignore`.
+    - Se elimina la carpeta `.vscode` del repositorio.
+- Se genera build para producción.
+- Se agrega "homepage" a `package.json`
+- Se modifica `url()` por `URL()` en archivos fuente SASS.
+
+## Versión 1.7 (RC)
 - Se añade lógica de borrado de carrito tras enviar compra a `Checkout.jsx`.
 - Se separa de `Cart.jsx` la renderización, de los items del cart y ahora se importa desde `CartItem.jsx` (nuevo componente).
 - Se crea `BriefItem.jsx` para ser renderizado en `Brief.jsx` dentro del `Checkout.jsx` (Contiene funcionalidad de remoción de items).
@@ -28,7 +50,7 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 - Se elimina el componente `CheckoutToggler` ya que quedo en desuso.
 - Se añaden estilos al componente `Cart.jsx`
     - Se estiliza los items del carrito para ser mas atractivos y funcionales.
-    - Se estiliza el carrito aun cuando esta vacio
+    - Se estiliza el carrito aun cuando esta vacío
     - Se adapta el sitio para matener el footer en la seccion inferior de la pagina cuando el contenido es muy poco en el main.
     - Se añade uso de Router-Hash en link de "Ver todos los productos" del Carrito vacio.
 - Se reordenan los componentes en el Router, para evitar que el resto del sitio sea mostrado en la vista de carrito.
@@ -68,7 +90,7 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 - Se añaden estilos para el footer en `_footer.scss`
 
 ## Versión 1.3
-- Se incorporan categorias organicas dentro del proyecto.
+- Se incorporan categorías orgánicas dentro del proyecto.
     - Se añade el componente `Menu` que contiene el menu desplegable con las categorias con llamada async.
     - Se modifica el componente `ItemListContainer` para recibir llamados por categorias y por la totalidad de los productos.
     - Se crea una nueva coleccion en Firestore para almacenar datos de categorias.
@@ -76,9 +98,9 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 - Se añaden estilos para la barra de desplazamiento lateral en `_scrollbars.scss`
 
 ## Versión 1.2
-- Se solucionan multiples advertencias de compilación de React.
+- Se solucionan múltiples advertencias de compilación de React.
     - Se solucionan problemas en algunas funciones async.
-- Se añade uso de key en mapeo de items.
+- Se añade uso de key en mapeo de ítems.
 - Se añaden `16` productos a Firestore de diferentes rarezas para poder generar categorias mas populosas.
 - Se modifica el comportamiento del `ItemListContainer` para poder albergar los nuevos productos.
 - Se modifica la estetica general de todos los productos para alinearlos con los nuevos.
@@ -100,10 +122,10 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
     - `App.css`
     - `logo.svg`
     - Directorio `img` dentro de public y todas sus imágenes (estan alojadas en Firestore)
-- Se comienza a implementar estilos via SASS 
+- Se comienza a implementar estilos vía SASS 
 
 ## Versión 1.0 (Primera versión completamente funcional)
-- Se integra el uso de Firebase con recepción de ordenes de compra y devolución de numero de orden
+- Se integra el uso de Firebase con recepción de órdenes de compra y devolución de numero de orden
 - El proceso de selección de productos, creación de carrito y finalización de compra esta completo.
     - A partir de este commit, los cambios realizados en el proyecto a nivel funcional, solo seran en pos de incrementar la optimización, la estetica y la experiencia del usuario.
     - Se programa incrementar la cantidad de productos y la categorización de los mismos.
@@ -115,7 +137,7 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 
 ## Versión 0.8.2
 - Se finaliza el uso de Context para la correcta manipulacion del cart.
-- Se añade visualizacion al Cart (desafio Cart View)
+- Se añade visualización al Cart (desafío Cart View)
 
 ## Versión 0.8.1
 - Se reformula uso de CartContext e integración con el Cart.
@@ -127,7 +149,7 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 
 ## Versión 0.7 
 - Se añade cartContext.js
-- Se añade Cart.jsx (vacio por el momento)
+- Se añade Cart.jsx (vacío por el momento)
 - Se incluye el ItemCount dentro del ItemDetail con requerimiento por desafio.
 
 ## Versión 0.6 (Primer entrega del proyecto final)
@@ -137,7 +159,7 @@ Actualmente se encuentran instaladas las siguientes dependencias por fuera de la
 ## Versión 0.5
 - Se añaden componentes `ItemDetail.jsx` , `ItemDetailContainer.jsx`
 - Se añaden paginas `contact.jsx` y `products.jsx`
-- Se reestrctura la funcion de ItemListContainer, Item y App.
+- Se reestructura la función de ItemListContainer, Item y App.
 - Se añade routing.
 
 ## Versión 0.4

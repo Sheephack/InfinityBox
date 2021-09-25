@@ -27,6 +27,9 @@ La aplicación utiliza las siguientes dependencias:
 - React-router-hash-link (navegación entre hashs internos de la aplicación)
 
 # **Versiones:**
+# Versión 1.8.2 (HotFix)
+- Se intenta solucionar problema con hosteo en GitHub Pages. (Nuevamente, problema con rutas relativas.)
+
 # Versión 1.8.1 (HotFix)
 - Se intenta solucionar problema con hosteo en GitHub Pages.
 

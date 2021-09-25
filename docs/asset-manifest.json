@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/InfinityBox/static/css/main.cc102ca1.chunk.css",
-    "main.js": "/InfinityBox/static/js/main.95a80ff0.chunk.js",
-    "main.js.map": "/InfinityBox/static/js/main.95a80ff0.chunk.js.map",
-    "runtime-main.js": "/InfinityBox/static/js/runtime-main.b6fd28fb.js",
-    "runtime-main.js.map": "/InfinityBox/static/js/runtime-main.b6fd28fb.js.map",
-    "static/css/2.986b7b15.chunk.css": "/InfinityBox/static/css/2.986b7b15.chunk.css",
-    "static/js/2.db6351c0.chunk.js": "/InfinityBox/static/js/2.db6351c0.chunk.js",
-    "static/js/2.db6351c0.chunk.js.map": "/InfinityBox/static/js/2.db6351c0.chunk.js.map",
-    "static/js/3.694ef484.chunk.js": "/InfinityBox/static/js/3.694ef484.chunk.js",
-    "static/js/3.694ef484.chunk.js.map": "/InfinityBox/static/js/3.694ef484.chunk.js.map",
-    "index.html": "/InfinityBox/index.html",
-    "static/css/2.986b7b15.chunk.css.map": "/InfinityBox/static/css/2.986b7b15.chunk.css.map",
-    "static/css/main.cc102ca1.chunk.css.map": "/InfinityBox/static/css/main.cc102ca1.chunk.css.map",
-    "static/js/2.db6351c0.chunk.js.LICENSE.txt": "/InfinityBox/static/js/2.db6351c0.chunk.js.LICENSE.txt",
-    "static/media/styles.scss": "/InfinityBox/static/media/footer-img.9b97fd5a.png",
-    "static/media/iboxlogo.0de33be4.png": "/InfinityBox/static/media/iboxlogo.0de33be4.png",
-    "static/media/slide1.2f835719.jpg": "/InfinityBox/static/media/slide1.2f835719.jpg",
-    "static/media/slide2.eb89a4b1.jpg": "/InfinityBox/static/media/slide2.eb89a4b1.jpg",
-    "static/media/slide3.c92bf5ee.jpg": "/InfinityBox/static/media/slide3.c92bf5ee.jpg"
+    "main.css": "/static/css/main.8c9c80c7.chunk.css",
+    "main.js": "/static/js/main.fbb3616a.chunk.js",
+    "main.js.map": "/static/js/main.fbb3616a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e3f5a488.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e3f5a488.js.map",
+    "static/css/2.986b7b15.chunk.css": "/static/css/2.986b7b15.chunk.css",
+    "static/js/2.871b3438.chunk.js": "/static/js/2.871b3438.chunk.js",
+    "static/js/2.871b3438.chunk.js.map": "/static/js/2.871b3438.chunk.js.map",
+    "static/js/3.77ec8830.chunk.js": "/static/js/3.77ec8830.chunk.js",
+    "static/js/3.77ec8830.chunk.js.map": "/static/js/3.77ec8830.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.986b7b15.chunk.css.map": "/static/css/2.986b7b15.chunk.css.map",
+    "static/css/main.8c9c80c7.chunk.css.map": "/static/css/main.8c9c80c7.chunk.css.map",
+    "static/js/2.871b3438.chunk.js.LICENSE.txt": "/static/js/2.871b3438.chunk.js.LICENSE.txt",
+    "static/media/styles.scss": "/static/media/footer-img.9b97fd5a.png",
+    "static/media/iboxlogo.0de33be4.png": "/static/media/iboxlogo.0de33be4.png",
+    "static/media/slide1.2f835719.jpg": "/static/media/slide1.2f835719.jpg",
+    "static/media/slide2.eb89a4b1.jpg": "/static/media/slide2.eb89a4b1.jpg",
+    "static/media/slide3.c92bf5ee.jpg": "/static/media/slide3.c92bf5ee.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b6fd28fb.js",
+    "static/js/runtime-main.e3f5a488.js",
     "static/css/2.986b7b15.chunk.css",
-    "static/js/2.db6351c0.chunk.js",
-    "static/css/main.cc102ca1.chunk.css",
-    "static/js/main.95a80ff0.chunk.js"
+    "static/js/2.871b3438.chunk.js",
+    "static/css/main.8c9c80c7.chunk.css",
+    "static/js/main.fbb3616a.chunk.js"
   ]
 }

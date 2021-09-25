@@ -27,7 +27,10 @@ La aplicación utiliza las siguientes dependencias:
 - React-router-hash-link (navegación entre hashs internos de la aplicación)
 
 # **Versiones:**
-# Versión 1.8 (RELEASE)
+# Versión 1.8.1 (HotFix)
+- Se intenta solucionar problema con hosteo en GitHub Pages.
+
+## Versión 1.8 (RELEASE)
 - Se cambia la estructura general de `Readme.md` para optimizar la documentación de la aplicación.
     - Se hacen correcciones ortográficas.
 - Se cambia el GIF en `Readme.md` por la versión actualizada final de la aplicación.

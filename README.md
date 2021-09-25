@@ -29,6 +29,9 @@ La aplicación utiliza las siguientes dependencias:
 # **Versiones:**
 # Versión 1.8.7 (HotFix)
 - Se intenta solucionar problema con hosteo en GitHub Pages.
+    - Se cambia Router a HashRouter
+## Versión 1.8.7 (HotFix)
+- Se intenta solucionar problema con hosteo en GitHub Pages.
 ## Versión 1.8.6 (HotFix)
 - Se intenta solucionar problema con hosteo en GitHub Pages.
     - Se elimina dependencia, no genera resultados satisfactorios.
